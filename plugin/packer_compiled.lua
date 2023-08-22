@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/home/gelerum/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
-  ["lsp_signature.nvim"] = {
-    loaded = true,
-    path = "/home/gelerum/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
-    url = "https://github.com/ray-x/lsp_signature.nvim"
-  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/gelerum/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -128,6 +123,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/gelerum/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/home/gelerum/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/gelerum/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["vim-nix"] = {
     loaded = true,

@@ -38,10 +38,6 @@ cmp.setup({
     })
 })
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-local lspconfig = require('lspconfig')
-
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
@@ -65,14 +61,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
         vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
         vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-        vim.keymap.set('n', '<space>f', function()
+        vim.keymap.set('n', '<M-f>', function()
             vim.lsp.buf.format { async = true }
         end, opts)
     end,
 })
 
--- format on save
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local lspconfig = require('lspconfig')
 
 lspconfig.rust_analyzer.setup {
     capabilities = capabilities,
@@ -93,10 +90,12 @@ lspconfig.pylsp.setup {
         }
     }
 }
+
 lspconfig.rnix.setup {
     capabilities = capabilities,
     filetypes = { "nix" },
 }
+
 lspconfig.lua_ls.setup {
     capabilities = capabilities,
     filetypes = { "lua" },
