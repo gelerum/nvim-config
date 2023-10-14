@@ -1,6 +1,5 @@
 require('lualine').setup {
     options = {
-        theme                = require 'core.colorscheme',
         disabled_filetypes   = { 'packer', 'NvimTree' },
         globalstatus         = false,
         component_separators = { left = '', right = '' },

@@ -22,7 +22,7 @@ local function on_attach(bufnr)
     vim.keymap.set('n', '<', api.node.navigate.sibling.prev, opts('Previous Sibling'))
     vim.keymap.set('n', '.', api.node.run.cmd, opts('Run Command'))
     vim.keymap.set('n', '-', api.tree.change_root_to_parent, opts('Up'))
-    vim.keymap.set('n', 'a', api.fs.create, opts('Create'))
+    vim.keymap.set('n', 'n', api.fs.create, opts('Create'))
     vim.keymap.set('n', 'bmv', api.marks.bulk.move, opts('Move Bookmarked'))
     vim.keymap.set('n', 'B', api.tree.toggle_no_buffer_filter, opts('Toggle No Buffer'))
     vim.keymap.set('n', 'c', api.fs.copy.node, opts('Copy'))
@@ -61,13 +61,9 @@ local function on_attach(bufnr)
     vim.keymap.set('n', '<2-LeftMouse>', api.node.open.edit, opts('Open'))
     vim.keymap.set('n', '<2-RightMouse>', api.tree.change_root_to_node, opts('CD'))
     -- END_DEFAULT_ON_ATTACH
-
-    -- Removed keymaps
-    vim.keymap.set('n', '<C-e>', '', { buffer = bufnr })
-    vim.keymap.del('n', '<C-e>', { buffer = bufnr })
 end
 
-vim.keymap.set({ 'n', 'i' }, '<C-e>', ':NvimTreeFocus<CR>', { silent = true })
+vim.keymap.set('n', '<C-u>', ':NvimTreeFocus<CR>', { silent = true })
 vim.keymap.set('n', '<C-b>', ':NvimTreeToggle<CR>', { silent = true })
 
 
