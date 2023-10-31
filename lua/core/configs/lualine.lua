@@ -1,9 +1,7 @@
 require('lualine').setup {
     options = {
-        disabled_filetypes   = { 'packer', 'NvimTree' },
-        globalstatus         = false,
-        component_separators = { left = '', right = '' },
-        section_separators   = { left = '', right = '' },
+        disabled_filetypes = { 'packer', 'NvimTree' },
+        globalstatus       = false,
     },
     sections = {
         lualine_b = {},

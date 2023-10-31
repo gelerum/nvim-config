@@ -5,7 +5,10 @@ lspconfig.rust_analyzer.setup {
     capabilities = capabilities,
     filetypes = { "rust" },
 }
-
+lspconfig.clangd.setup {
+    capabilities = capabilities,
+    filetypes = { "cpp" },
+}
 lspconfig.pylsp.setup {
     capabilities = capabilities,
     filetypes = { "python" },
@@ -14,15 +17,11 @@ lspconfig.pylsp.setup {
             plugins = {
                 pylsp_mypy = { enabled = true },
                 pylsp_black = { enabled = true },
-                pylsp_ruff = {
-                    enabled = true,
-                },
-                pyls_isort = { enabled = true },
+                pylsp_ruff = { enabled = true, },
             }
         }
     }
 }
-
 lspconfig.rnix.setup {
     capabilities = capabilities,
     filetypes = { "nix" },
@@ -30,7 +29,6 @@ lspconfig.rnix.setup {
 lspconfig.gopls.setup {
     capabilities = capabilities,
 }
-
 lspconfig.lua_ls.setup {
     capabilities = capabilities,
     filetypes = { "lua" },

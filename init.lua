@@ -11,46 +11,65 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 local plugins = {
-    -- lsp
+    'LnL7/vim-nix',
+    'Vimjas/vim-python-pep8-indent',
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = function()
+            require 'core.configs.autopairs'
+        end
+    },
     {
         'neovim/nvim-lspconfig',
         dependencies = { 'hrsh7th/cmp-nvim-lsp', },
         config = function()
-            require 'core.lspconfig'
+            require 'core.configs.lspconfig'
         end
     },
     {
         'hrsh7th/nvim-cmp',
         dependencies = { 'hrsh7th/cmp-vsnip', 'hrsh7th/cmp-nvim-lsp' },
         config = function()
-            require 'core.nvim-cmp'
+            require 'core.configs.cmp'
         end,
     },
-    -- nix
-    'LnL7/vim-nix',
-    'Vimjas/vim-python-pep8-indent',
-
-    { 'nvim-tree/nvim-tree.lua',   dependencies = { "nvim-tree/nvim-web-devicons" } },
+    {
+        'nvim-tree/nvim-tree.lua',
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+            require "core.configs.tree"
+        end,
+    },
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         config = function()
-            require "core.treesitter"
+            require "core.configs.treesitter"
         end
     },
-    { 'nvim-lualine/lualine.nvim', dependencies = { "nvim-tree/nvim-web-devicons" } },
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+            require "core.configs.lualine"
+        end
+    },
     {
         "catppuccin/nvim",
         name = "catppuccin",
         priority = 1000,
         config = function()
-            require "core.colorscheme"
+            require "core.configs.colorscheme"
         end,
     },
     {
         'nvim-telescope/telescope.nvim',
         branch = '0.1.x',
-        dependencies = { 'nvim-lua/plenary.nvim' }
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        config = function()
+            require 'core.configs.telescope'
+        end,
     }
 }
 
