@@ -56,8 +56,8 @@ vim.keymap.set({ 'n', 'v' }, 'x', '"_x')
 vim.keymap.set({ 'n', 'v' }, 'd', '"_d')
 vim.keymap.set({ 'n', 'v' }, 'D', '"_D')
 
-vim.keymap.set({ 'n', 'v' }, 't', 'd')
-vim.keymap.set({ 'n', 'v' }, 'tt', 'dd')
+vim.keymap.set('v', 't', 'd')
+vim.keymap.set('n', 'tt', 'dd')
 vim.keymap.set({ 'n', 'v' }, 'T', 'D')
 
 vim.keymap.set({ 'n', 'v' }, 'c', '"_c')

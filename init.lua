@@ -55,7 +55,7 @@ local plugins = {
             require "core.configs.lualine"
         end
     },
-    {
+	{
         "catppuccin/nvim",
         name = "catppuccin",
         priority = 1000,
