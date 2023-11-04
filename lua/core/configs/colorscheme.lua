@@ -26,6 +26,8 @@ require("catppuccin").setup({
         operators = { "italic" },
         loops = { "italic" },
         keywords = { "italic" },
+    },
+    color_overrides = {
     }
 })
 vim.cmd.colorscheme "catppuccin-latte"

@@ -7,14 +7,14 @@ require('lualine').setup {
     },
     sections = {
         lualine_a = {
-            { 'mode', separator = { left = '' }, right_padding = 2 },
+            { 'mode', separator = { right = '' }, },
         },
         lualine_b = { 'branch', 'diff' },
         lualine_c = { { "filename", path = 3 } },
         lualine_x = {},
         lualine_y = { 'diagnostics', 'progress' },
         lualine_z = {
-            { 'location', separator = { right = '' }, left_padding = 2 },
+            { 'location', separator = { left = '' }, },
         },
     },
 }

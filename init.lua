@@ -55,7 +55,7 @@ local plugins = {
             require "core.configs.lualine"
         end
     },
-	{
+    {
         "catppuccin/nvim",
         name = "catppuccin",
         priority = 1000,
@@ -76,4 +76,5 @@ local plugins = {
 local opts = {}
 
 require("lazy").setup(plugins, opts)
+require("core")
 require("core")
