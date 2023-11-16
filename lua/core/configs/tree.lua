@@ -10,6 +10,7 @@ local function on_attach(bufnr)
     -- New keymaps
     vim.keymap.set('n', '<C-n>', ':NvimTreeFocus<CR>', { silent = true })
     vim.keymap.set('n', '<C-e>', ':NvimTreeToggle<CR>', { silent = true })
+    vim.keymap.set('n', 'h', api.tree.toggle_hidden_filter, opts('Toggle Dotfiles'))
     vim.keymap.set('n', 'n', api.fs.create, opts('Create'))
 end
 
